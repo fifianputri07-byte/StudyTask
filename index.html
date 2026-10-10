@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyTask</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">📚 StudyTask</div>
+
+        <div class="menu">
+            <button onclick="keBeranda()">Beranda</button>
+            <button onclick="keDaftarTugas()">Daftar Tugas</button>
+        </div>
+    </header>
+
+
+    <!-- BERANDA -->
+    <div id="home">
+
+        <div class="hero">
+
+            <div>
+                <h1>Selamat Datang di StudyTask</h1>
+
+                <p>
+                    Kelola tugas kuliah, deadline, dan status tugas
+                    dengan lebih mudah.
+                </p>
+
+                <button onclick="keDaftarTugas()">
+                    📋 Lihat Daftar Tugas
+                </button>
+            </div>
+
+            <div class="hero-icon">
+                📚
+            </div>
+
+        </div>
+
+
+        <!-- STATISTIK -->
+        <div class="statistik">
+
+            <div class="stat-card" onclick="keDaftarTugas()">
+                <h2>0</h2>
+                <p>Total Tugas</p>
+            </div>
+
+            <div class="stat-card" onclick="keDaftarTugas()">
+                <h2>0</h2>
+                <p>Belum Selesai</p>
+            </div>
+
+            <div class="stat-card" onclick="keDaftarTugas()">
+                <h2>0</h2>
+                <p>Sudah Selesai</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- DAFTAR TUGAS -->
+    <div id="tasks" style="display: none;">
+
+        <h1>Daftar Tugas</h1>
+
+        <p>
+            Catat tugas kuliah dan deadline kamu di sini.
+        </p>
+
+        <button onclick="tambahTugas()">
+            + Tambah Tugas
+        </button>
+
+        <br><br>
+
+        <input type="date" id="deadline">
+
+        <input
+    type="text"
+    id="cariTugas"
+    placeholder="🔍 Cari tugas atau mata kuliah..."
+    oninput="cariTugas()"
+>
+
+<select id="filterTugas" onchange="filterTugas()">
+    <option value="semua">📚 Semua Tugas</option>
+    <option value="belum">🟣 Belum Selesai</option>
+    <option value="selesai">✅ Sudah Selesai</option>
+</select>
+
+        <div id="daftarTugas">
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
